@@ -13,7 +13,7 @@
 	<area>国服</area>
 </matchInfo> 
 <matchInfo>
-	<Img>1.Img</Img>
+	<Img>1.Img</Img> 
 	<name>炉石杯</name>
 	<matchId>10023</matchId>
 	<deadline>2017/4/11</deadline>
