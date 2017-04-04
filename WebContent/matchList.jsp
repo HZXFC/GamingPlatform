@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<matchList>
+	<matchInfo>
+		<Img></Img>
+		<name>炉石杯</name>
+		<matchId>10023</matchId>
+		<deadline>2017/4/11</deadline>
+		<Location>900m</Location>
+	</matchInfo> 
+	<matchInfo>
+		<Img></Img>
+		<name>炉石杯</name>
+		<matchId>10023</matchId>
+		<deadline>2017/4/11</deadline>
+		<Location>900m</Location>
+	</matchInfo> 
+	<matchInfo>
+		<Img></Img>
+		<name>炉石杯</name>
+		<matchId>10023</matchId>
+		<deadline>2017/4/11</deadline>
+		<Location>900m</Location>
+	</matchInfo> 
+<matchList>
