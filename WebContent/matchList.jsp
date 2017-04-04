@@ -14,7 +14,7 @@
 		<deadline>2017/4/11</deadline>
 		<Location>900m</Location>
 	</matchInfo> 
-	<matchInfo>
+	<matchInfo> 
 		<Img></Img>
 		<name>炉石杯</name>
 		<matchId>10023</matchId>
