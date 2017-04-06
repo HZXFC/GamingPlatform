@@ -1,108 +1,99 @@
-/*==============================================================*/
-/* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2017/4/6 21:13:38                            */
-/*==============================================================*/
+/*
+Navicat MySQL Data Transfer
 
+Source Server         : mysql.root
+Source Server Version : 50711
+Source Host           : localhost:3306
+Source Database       : gaming
 
-drop table if exists comment;
+Target Server Type    : MYSQL
+Target Server Version : 50711
+File Encoding         : 65001
 
-drop table if exists gameMatch;
+Date: 2017-04-06 21:26:44
+*/
 
-drop table if exists regist_multi;
+SET FOREIGN_KEY_CHECKS=0;
 
-drop table if exists regist_multi_member;
+-- ----------------------------
+-- Table structure for comment
+-- ----------------------------
+DROP TABLE IF EXISTS `comment`;
+CREATE TABLE `comment` (
+  `userID` int(11) DEFAULT NULL,
+  `matchID` int(11) DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
+  `content` varchar(256) DEFAULT NULL,
+  KEY `FK_Relationship_6` (`userID`),
+  KEY `FK_Relationship_7` (`matchID`),
+  CONSTRAINT `FK_Relationship_6` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`),
+  CONSTRAINT `FK_Relationship_7` FOREIGN KEY (`matchID`) REFERENCES `gamematch` (`matchID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-drop table if exists regist_solo;
+-- ----------------------------
+-- Table structure for gamematch
+-- ----------------------------
+DROP TABLE IF EXISTS `gamematch`;
+CREATE TABLE `gamematch` (
+  `matchIMG` varchar(256) DEFAULT NULL,
+  `matchName` varchar(256) DEFAULT NULL,
+  `deadline` datetime DEFAULT NULL,
+  `teamNum` int(11) DEFAULT NULL,
+  `personNum` int(11) DEFAULT NULL,
+  `ruleID` int(11) DEFAULT NULL,
+  `area` varchar(256) DEFAULT NULL,
+  `award` int(11) DEFAULT NULL,
+  `startTime` datetime DEFAULT NULL,
+  `matchID` int(11) NOT NULL,
+  PRIMARY KEY (`matchID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-drop table if exists user;
+-- ----------------------------
+-- Table structure for regist_multi
+-- ----------------------------
+DROP TABLE IF EXISTS `regist_multi`;
+CREATE TABLE `regist_multi` (
+  `userID` int(11) DEFAULT NULL,
+  `matchID` int(11) DEFAULT NULL,
+  `groupID` int(11) NOT NULL,
+  PRIMARY KEY (`groupID`),
+  KEY `FK_Relationship_3` (`userID`),
+  KEY `FK_Relationship_4` (`matchID`),
+  CONSTRAINT `FK_Relationship_3` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`),
+  CONSTRAINT `FK_Relationship_4` FOREIGN KEY (`matchID`) REFERENCES `gamematch` (`matchID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*==============================================================*/
-/* Table: comment                                               */
-/*==============================================================*/
-create table comment
-(
-   userID               int,
-   matchID              int,
-   date                 datetime,
-   content              varchar(256)
-);
+-- ----------------------------
+-- Table structure for regist_multi_member
+-- ----------------------------
+DROP TABLE IF EXISTS `regist_multi_member`;
+CREATE TABLE `regist_multi_member` (
+  `groupID` int(11) DEFAULT NULL,
+  KEY `FK_Relationship_5` (`groupID`),
+  CONSTRAINT `FK_Relationship_5` FOREIGN KEY (`groupID`) REFERENCES `regist_multi` (`groupID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*==============================================================*/
-/* Table: gameMatch                                             */
-/*==============================================================*/
-create table gameMatch
-(
-   matchIMG             varchar(256),
-   matchName            varchar(256),
-   deadline             datetime,
-   teamNum              int,
-   personNum            int,
-   ruleID               int,
-   area                 varchar(256),
-   award                int,
-   startTime            datetime,
-   matchID              int not null,
-   primary key (matchID)
-);
+-- ----------------------------
+-- Table structure for regist_solo
+-- ----------------------------
+DROP TABLE IF EXISTS `regist_solo`;
+CREATE TABLE `regist_solo` (
+  `userID` int(11) DEFAULT NULL,
+  `matchID` int(11) DEFAULT NULL,
+  `gameID` varchar(256) DEFAULT NULL,
+  KEY `FK_Relationship_1` (`userID`),
+  KEY `FK_Relationship_2` (`matchID`),
+  CONSTRAINT `FK_Relationship_1` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`),
+  CONSTRAINT `FK_Relationship_2` FOREIGN KEY (`matchID`) REFERENCES `gamematch` (`matchID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*==============================================================*/
-/* Table: regist_multi                                          */
-/*==============================================================*/
-create table regist_multi
-(
-   userID               int,
-   matchID              int,
-   groupID              int not null,
-   primary key (groupID)
-);
-
-/*==============================================================*/
-/* Table: regist_multi_member                                   */
-/*==============================================================*/
-create table regist_multi_member
-(
-   groupID              int
-);
-
-/*==============================================================*/ 
-/* Table: regist_solo                                           */
-/*==============================================================*/
-create table regist_solo
-(
-   userID               int,
-   matchID              int,
-   gameID               varchar(256)
-);
-
-/*==============================================================*/
-/* Table: user                                                  */
-/*==============================================================*/
-create table user
-(
-   userIMG              varchar(256),
-   userName             varchar(256),
-   userID               int not null,
-   primary key (userID)
-);
-
-alter table comment add constraint FK_Relationship_6 foreign key (userID)
-      references user (userID) on delete restrict on update restrict;
-
-alter table comment add constraint FK_Relationship_7 foreign key (matchID)
-      references gameMatch (matchID) on delete restrict on update restrict;
-
-alter table regist_multi add constraint FK_Relationship_3 foreign key (userID)
-      references user (userID) on delete restrict on update restrict;
-
-alter table regist_multi add constraint FK_Relationship_4 foreign key (matchID)
-      references gameMatch (matchID) on delete restrict on update restrict;
-
-alter table regist_multi_member add constraint FK_Relationship_5 foreign key (groupID)
-      references regist_multi (groupID) on delete restrict on update restrict;
-
-alter table regist_solo add constraint FK_Relationship_1 foreign key (userID)
-      references user (userID) on delete restrict on update restrict;
-
-alter table regist_solo add constraint FK_Relationship_2 foreign key (matchID)
-      references gameMatch (matchID) on delete restrict on update restrict;
-
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `userIMG` varchar(256) DEFAULT NULL,
+  `userName` varchar(256) DEFAULT NULL,
+  `userID` int(11) NOT NULL,
+  PRIMARY KEY (`userID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
