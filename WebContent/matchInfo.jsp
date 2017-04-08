@@ -10,6 +10,8 @@
 	<award>20000</award>
 	<organizerID>102</organizerID>
 	<area>国服</area>
+	<startTime>dawd</startTime>
+	<type>炉石</type>
 </matchInfo> 
 <matchCommentList>
 	<matchComment>
