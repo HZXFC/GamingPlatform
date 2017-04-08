@@ -12,7 +12,7 @@
 	<organizerID>102</organizerID>
 	<area>国服</area>
 </matchInfo> 
-<matchInfo>
+<matchInfo> 
 	<Img>1.Img</Img>  
 	<name>炉石杯</name>
 	<matchId>10023</matchId>
