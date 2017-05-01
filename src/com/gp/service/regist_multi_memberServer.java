@@ -10,7 +10,7 @@ public class regist_multi_memberServer {
 	regist_multi_memberDao multiDao = new regist_multi_memberImpl();
 	private static final regist_multi_memberServer instance = new regist_multi_memberServer();
 	
-	public regist_multi_memberServer getInstance(){
+	public static regist_multi_memberServer getInstance(){
 		return instance;
 	}
 	//获得已报名的成员列表

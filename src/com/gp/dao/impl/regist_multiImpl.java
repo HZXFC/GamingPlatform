@@ -77,6 +77,7 @@ public class regist_multiImpl implements regist_multiDao{
 		String sql = "DELETE FROM `regist_multi` WHERE 1=1 "+str;
 		
 		Connection conn=null;
+		
 		try{
 			conn = ConnectionHelper.getConnection();
 			Statement state= conn.createStatement();

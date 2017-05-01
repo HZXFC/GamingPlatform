@@ -50,8 +50,8 @@ public class regist_multi_memberImpl implements regist_multi_memberDao{
 	@Override
 	public boolean add(regist_multi_memberBean multi) {
 		// TODO Auto-generated method stub
-		String sql = "INSERT INTO `regist_multi_member` (`groupID`, `userID`, `gameID`) VALUES "
-				+ "('"+multi.getGroupID()+"', '"+multi.getUserID()+"', '"+multi.getGameID()+"')";
+		String sql = "INSERT INTO `regist_multi_member` ( `userID`, `gameID`) VALUES "
+				+ "('"+multi.getUserID()+"', '"+multi.getGameID()+"')";
 		Connection conn=null;
 		try{
 			conn = ConnectionHelper.getConnection();

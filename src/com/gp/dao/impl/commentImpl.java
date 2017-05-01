@@ -52,7 +52,7 @@ public class commentImpl implements commentDao{
 	@Override
 	public boolean add(commentBean comment) {
 		// TODO Auto-generated method stub
-		String sql="SINSERT INTO `comment` (`userID`, `matchID`, `date`, `content`) VALUES ('"+comment.getUserID()+"', '"+comment.getMatchID()+"', '"+comment.getDate()+"', '"+comment.getContent()+"')" ;
+		String sql="SINSERT INTO `comment` ( `matchID`, `date`, `content`) VALUES ( '"+comment.getMatchID()+"', '"+comment.getDate()+"', '"+comment.getContent()+"')" ;
 		Connection conn=null;
 		try{
 			conn = ConnectionHelper.getConnection();
