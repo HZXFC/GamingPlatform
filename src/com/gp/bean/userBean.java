@@ -29,6 +29,8 @@ public class userBean {
 		return userIMG;
 	}
 
+	
+	
 	public void setUserIMG(String userIMG) {
 		this.userIMG = userIMG;
 	}
