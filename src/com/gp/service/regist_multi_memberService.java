@@ -6,11 +6,11 @@ import com.gp.bean.regist_multi_memberBean;
 import com.gp.dao.regist_multi_memberDao;
 import com.gp.dao.impl.regist_multi_memberImpl;
 
-public class regist_multi_memberServer {
+public class regist_multi_memberService {
 	regist_multi_memberDao multiDao = new regist_multi_memberImpl();
-	private static final regist_multi_memberServer instance = new regist_multi_memberServer();
+	private static final regist_multi_memberService instance = new regist_multi_memberService();
 	
-	public static regist_multi_memberServer getInstance(){
+	public static regist_multi_memberService getInstance(){
 		return instance;
 	}
 	//获得已报名的成员列表

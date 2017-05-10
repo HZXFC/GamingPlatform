@@ -7,12 +7,12 @@ import com.gp.dao.regist_multi_memberDao;
 import com.gp.dao.impl.regist_multiImpl;
 import com.gp.dao.impl.regist_multi_memberImpl;
 
-public class regist_multiServer {
+public class regist_multiService {
 	regist_multiDao multiDao = new regist_multiImpl();
 	regist_multi_memberDao memberDao = new regist_multi_memberImpl();
-	private static final regist_multiServer instance = new regist_multiServer(); 
+	private static final regist_multiService instance = new regist_multiService(); 
 	
-	public static regist_multiServer getInstance(){
+	public static regist_multiService getInstance(){
 		return instance;
 	}
 	
@@ -44,7 +44,7 @@ public class regist_multiServer {
 		member.setUserID(userID);
 		member.setGameID(gameID);
 		
-		regist_multi_memberServer.getInstance().regist(member);
+		regist_multi_memberService.getInstance().regist(member);
 		
 		return true;
 	}

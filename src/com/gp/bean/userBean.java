@@ -7,7 +7,7 @@ public class userBean {
 	
 	private String userName;
 	
-	private String userIMG;
+	private String Pwd;
 
 	public int getUserID() {
 		return userID;
@@ -25,15 +25,14 @@ public class userBean {
 		this.userName = userName;
 	}
 
-	public String getUserIMG() {
-		return userIMG;
+	public String getPwd() {
+		return Pwd;
 	}
 
-	
-	
-	public void setUserIMG(String userIMG) {
-		this.userIMG = userIMG;
+	public void setPwd(String pwd) {
+		Pwd = pwd;
 	}
-	
+
+
 
 }
