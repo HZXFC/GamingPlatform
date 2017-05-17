@@ -44,32 +44,32 @@ public class UserController {
 	 }
 	 
 	 @RequestMapping("/register")
-	 public String register(String userName, String passWord){
+	 public int register(String userName, String passWord){
 		 List<User> userList = userService.finaByUserName(userName);
 		 if(!userList.isEmpty()){
-			 return "用户名已存在";
+			 return 0;//用户名已存在
 		 }else{
 			 User user = new User();
 			 user.setUserName(userName);
 		     user.setPassword(passWord);
 		     userService.save(user);
-		     return "注册成功";
+		     return 1;//注册成功
 		 }
 		 
 	 }
 	 
 	 @RequestMapping("/login")
-	 public String login(String userName, String passWord){
+	 public int login(String userName, String passWord){
 		 List<User> userList = userService.finaByUserName(userName);
 		 if(userList.isEmpty()){
-			 return "登录失败，用户名或密码错误";
+			 return 0;//"登录失败，用户名或密码错误"
 		 }else{
 			 for(User u :userList){
 				 if(u.getPassword().equals(passWord)){
-					 return "登陆成功";
+					 return 1;//"登陆成功";
 				 } 
 			 }
-				 return "登录失败，用户名或密码错误";
+				 return 0;//"登录失败，用户名或密码错误";
 			 }
 		 }
 }
