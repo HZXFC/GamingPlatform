@@ -14,6 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 
 @Entity
@@ -23,6 +25,7 @@ public class GameMatch {
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	private int id;
 	
+	@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")
 	private Date startTime;
 	
 	private int award;
@@ -35,6 +38,7 @@ public class GameMatch {
 	
 	private int teamNum; 
 	
+	@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")
 	private Date deadline;
 	
 	private String matchName;
