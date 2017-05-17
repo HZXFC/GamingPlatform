@@ -28,7 +28,7 @@ public class CommentController {
 	private UserService userService;
 	
 	@RequestMapping("/save")
-	public String save(int gameId,int userId){
+	public int save(int gameId,int userId){
 		GameMatch gm = gameMatchService.findById(gameId);
 		User u = userService.findById(userId);
 		Comment c = new Comment();
@@ -37,11 +37,11 @@ public class CommentController {
 		//c.setGamematch(gm);
 		c.setUser(u);
 		commentService.save(c);
-		return "save Ok";
+		return 1;
 	}
 	
 	@RequestMapping("/addComment")
-	public String addComment(int matchId,int userId,String content){
+	public int addComment(int matchId,int userId,String content){
 		GameMatch gm = gameMatchService.findById(matchId);
 		User u = userService.findById(userId);
 		Comment c = new Comment();
@@ -50,7 +50,7 @@ public class CommentController {
 		c.setContent(content);
 		gm.addComment(c);
 		gameMatchService.save(gm);
-		return "添加评论成功";
+		return 1;
 	}
 	
 	
