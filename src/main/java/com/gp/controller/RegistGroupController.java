@@ -55,7 +55,7 @@ public class RegistGroupController {
 				
 				return 2;//2创建队伍失败，比赛组数已到上限
 
-			}else if(ifRegisted(matchId,userId)){
+			}else if(ifRegisted(matchId,userId)==1){
 				
 				return 3;//3已经在比赛队伍中
 
@@ -77,7 +77,7 @@ public class RegistGroupController {
 		
 		@RequestMapping("/addGroupMember")
 		public int addGroupMember(int matchId,int groupId,int userId){
-				if(ifRegisted(matchId,userId)){
+				if(ifRegisted(matchId,userId)==1){
 				
 					return 3;//3已经在比赛队伍中
 
@@ -102,20 +102,20 @@ public class RegistGroupController {
 		
 		
 		@RequestMapping("/ifRegisted")
-		public boolean ifRegisted(int matchId,int userId){
+		public int ifRegisted(int matchId,int userId){
 			GameMatch gm = gameMatchService.findById(matchId);
 			List<RegistGroup> groupList = gm.getGroupList();
 			for(RegistGroup g : groupList){
 				List<User> userlist = g.getUserList();
 				for(User u : userlist){
 					if(u.getId()==userId){
-						return true;
+						return 1;
 					}
 				}
 			}
 			
 			
-			return false;
+			return 0;
 		}
 	
 }
