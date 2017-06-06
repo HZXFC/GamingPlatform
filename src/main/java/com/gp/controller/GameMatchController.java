@@ -47,7 +47,7 @@ public class GameMatchController {
 //		gameMatch.setRuleID(ruleID);
 //		gameMatch.setStartTime(sd);
 //		gameMatch.setTeamNum(teamNum);
-//		gameMatchService.save(gameMatch);
+//		gameMatchService.save(gameMatch);  
 		
 		return 1;
 	}
