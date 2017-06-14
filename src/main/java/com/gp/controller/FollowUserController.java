@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gp.bean.FollowUser;
 import com.gp.bean.User;
 import com.gp.service.FollowUserService;
+import com.gp.service.NewsService;
 import com.gp.service.UserService;
 
 @RestController
@@ -23,6 +24,10 @@ public class FollowUserController {
 	 @Resource
 	 private UserService userService;
 	 
+	@Resource
+	private NewsService newsService;
+		
+		
 	 @RequestMapping("/save")
 	 public int save(int userId,int followedUserId){
 		 FollowUser followUser = new FollowUser();
