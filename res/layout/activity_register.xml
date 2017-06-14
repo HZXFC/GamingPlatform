@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/register">
+    
+    <TextView
+        android:layout_marginTop="48dp"
+        android:id="@+id/register_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+         android:layout_marginBottom="8dp" 
+       />
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/userName" 
+                android:textColor="#5CACEE"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/regi_userName"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+             android:layout_marginBottom="8dp"  >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/password" 
+                android:textColor="#5CACEE"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/regi_password"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:password="true" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+             android:layout_marginBottom="8dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/repassword" 
+                android:textColor="#5CACEE"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/regi_repassword"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:password="true" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" 
+             android:layout_marginBottom="8dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:text="@string/sex"
+                android:textColor="#5CACEE"
+                android:textSize="18sp"  />
+
+            <RadioGroup
+                android:id="@+id/regi_sex"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/regi_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="@string/male" 
+                    android:textColor="#5CACEE"
+                android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/regi_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="@string/female"
+                    android:textColor="#5CACEE"
+                android:textSize="18sp"  />
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+             android:layout_marginBottom="8dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:text="@string/spin_prompt" 
+                android:textColor="#5CACEE"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/regi_communication_way"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:entries="@array/communication_way"
+                android:prompt="@string/spin_prompt"
+                android:spinnerMode="dropdown" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+             android:layout_marginBottom="8dp" >
+
+            <TextView
+                android:id="@+id/communication_way_choice"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:text="@string/telephone" 
+                android:textColor="#5CACEE"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/communication_content"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+          
+                android:textSize="18sp" 
+                />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" 
+         android:layout_marginBottom="8dp" >
+
+        <Button
+            android:id="@+id/regi_register"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="@string/register" 
+            android:background="@drawable/button1"
+            android:paddingBottom="8dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="8dp"
+            android:textColor="#ffffff" 
+            android:textSize="18sp"
+            android:layout_marginRight="48dp"/>
+
+        <Button
+            android:id="@+id/regi_goback"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="@string/goback"
+             android:background="@drawable/button1"
+             android:paddingBottom="8dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="8dp"
+            android:textColor="#ffffff" 
+            android:textSize="18sp" 
+            android:layout_marginLeft="48dp"/>
+    </LinearLayout>
+
+</LinearLayout>

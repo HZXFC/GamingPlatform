@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0F3F6"
+     >
+
+     <RelativeLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        
+        android:background="#FF0000"  >
+
+        <TextView
+            android:id="@+id/tv_netease_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:textSize="22sp"
+            android:textColor="@android:color/white"
+            android:text="@string/news_top_left_text1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_netease_top"
+            android:text="@string/news_top_left_text2"
+            android:textColor="@android:color/white"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/duoyun"
+            android:contentDescription="@string/img_duoyun_desc" />
+        
+    </RelativeLayout>
+    
+    <ImageView
+        android:id="@+id/m_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_gravity="center"
+       android:src="@drawable/p4" ></ImageView>
+   <TextView 
+        android:layout_marginTop="10dip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#2F4F4F"
+        android:textSize="15sp"
+        android:gravity="center_horizontal"
+        android:text="ID: 小烙叶" >
+    </TextView>
+    
+    <LinearLayout style="@style/wrap_layout" >
+        <!-- 上圆角-->
+        <LinearLayout style="@style/top_layout">
+            <TextView style="@style/usertext"
+               android:id="@+id/m_wodeguanzhu"
+               android:text="我的关注" />
+              <ImageView style="@style/img_arrow"/>
+        </LinearLayout>
+        
+        <!-- 分割线 -->
+          <View style="@style/bg_line"/>
+          <!-- 无圆角-->
+       <LinearLayout style="@style/mid_layout">
+            <TextView style="@style/usertext"
+                android:id="@+id/m_wodefensi"
+                android:text="我的粉丝" />
+              <ImageView style="@style/img_arrow"/>
+        </LinearLayout>
+             <View style="@style/bg_line"/>
+          <!-- 下圆角-->
+       <LinearLayout style="@style/bottom_layout">
+            <TextView style="@style/usertext" android:text="历史成绩" />
+              <ImageView style="@style/img_arrow"/>
+        </LinearLayout>
+             
+    </LinearLayout>
+
+    
+     <!-- 全圆角-->
+    <LinearLayout style="@style/wrap_layout">
+        <LinearLayout style="@style/single_layout">
+            <TextView style="@style/usertext" android:text="设置"/>
+            <ImageView style="@style/img_arrow"/>
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+    	<TextView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:textColor="#D3D3D3"
+	    android:padding="5sp"
+	    android:textSize="12sp"
+	    android:gravity="center_horizontal"
+    	android:text="\n\n\n\n\n\n\n\n关于我们\n组长：罗燕燕\n测试：张雨萌\n前端：高天一，李果\n后端：方成龙，贺正轩\n"/>
+
+</LinearLayout>
