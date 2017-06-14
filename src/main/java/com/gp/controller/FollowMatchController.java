@@ -12,6 +12,7 @@ import com.gp.bean.FollowMatch;
 import com.gp.bean.GameMatch;
 import com.gp.service.FollowMatchService;
 import com.gp.service.GameMatchService;
+import com.gp.service.NewsService;
 
 @RestController
 @RequestMapping("/followMatch")
@@ -22,6 +23,9 @@ public class FollowMatchController {
 	
 	@Resource
 	private GameMatchService gameMatchService;
+	
+	@Resource
+	private NewsService newsService;
 	
 	 @RequestMapping("/save")
 	 public int save(int userId,int matchId){
