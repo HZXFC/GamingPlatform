@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gp.bean.GameMatch;
+import com.gp.bean.News;
 import com.gp.bean.RegistGroup;
 import com.gp.bean.User;
 import com.gp.service.GameMatchService;
+import com.gp.service.NewsService;
 import com.gp.service.RegistGroupService;
 import com.gp.service.UserService;
 
@@ -28,6 +30,8 @@ public class RegistGroupController {
 	@Resource
 	private GameMatchService gameMatchService;
 	
+	@Resource
+	private NewsService newsService;
 	
 		@RequestMapping("/save")
 		public String save(){
@@ -69,6 +73,10 @@ public class RegistGroupController {
 				g.setUserList(userList);
 				gm.addGroup(g);
 				gameMatchService.save(gm);
+				News news = new News();
+				news.setUser(u);
+				news.setContent("创建队伍成功！");
+				newsService.save(news);
 				return 1;	//1创建队伍成功
 
 			}
